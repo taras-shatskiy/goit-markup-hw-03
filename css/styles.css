@@ -6,6 +6,7 @@
   --focus-color: #2196f3;
   --primary-white-color: #ffffff;
   --primary-black-color: #000000;
+  --translucent-black-color: rgba(255, 255, 255, 0.6);
 }
 .page {
   background-color: var(--primary-white-color);
@@ -31,6 +32,28 @@
   clip-path: inset(50%);
   margin: -1px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  outline: 2px dashed #f44336;
+}
+
 /* logo */
 .logo {
   color: var(--focus-color);
@@ -48,7 +71,29 @@
 }
 /* end Logo */
 /* header */
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 93px;
+}
+.site-nav {
+  display: flex;
+  gap: 50px;
+}
+
 .site-nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--title-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -62,7 +107,15 @@
 .site-nav-link.current {
   color: var(--focus-color);
 }
+.contact {
+  display: flex;
+  gap: 50px;
+}
 .contact-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -78,15 +131,27 @@
 .section-hero {
   background-color: var(--primary-background-color);
 }
+.container-hero {
+  padding: 200px 0;
+  text-align: center;
+}
 .hero-title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
   color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  width: 696px;
 }
 .button-primary {
+  padding: 10px 32px;
+  margin: inherit;
+
   color: var(--primary-white-color);
   font-family: inherit;
   font-weight: 700;
@@ -95,6 +160,8 @@
   letter-spacing: 0.06em;
   background-color: var(--focus-color);
   cursor: pointer;
+  border-radius: 4px;
+  border: 0;
 }
 .button-primary:hover,
 .button-primary:focus {
@@ -102,7 +169,18 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
+.container-preferecces {
+  padding-top: 94px;
+}
+
+.preferecces-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
 .preferences-title {
+  margin-bottom: 10px;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 14px;
@@ -114,37 +192,73 @@
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+.container-work {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .work-header {
+  margin-bottom: 50px;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   letter-spacing: 0.03em;
+  text-align: center;
 }
+.list-work {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
 .section-team {
   background-color: var(--secondary-background-color);
 }
+.container-team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .team-header {
+  margin-bottom: 50px;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   letter-spacing: 0.03em;
+  text-align: center;
+}
+.team-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 }
 .team-item {
   background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.image-team {
+  margin-bottom: 30px;
 }
 .team-title {
+  margin-bottom: 10px;
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
+  text-align: center;
 }
 .team-text {
+  margin-bottom: 30px;
+
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
+  text-align: center;
 }
 /* end styles index.html */
 /* styles portfolio.html */
@@ -189,14 +303,26 @@
   font-style: normal;
   list-style: none;
 }
+.container-footer {
+  padding: 60px 0;
+}
+.logo-footer {
+  margin-bottom: 20px;
+}
 .address-link {
   color: var(--primary-white-color);
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
 }
+.list-address-item {
+  margin-bottom: 9px;
+}
+.list-address-item:last-child {
+  margin-bottom: 0;
+}
 .contact-link-footer {
-  color: var(--primary-text-color);
+  color: var(--translucent-black-color);
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -205,5 +331,4 @@
 .contact-link-footer:focus {
   color: var(--focus-color);
 }
-
 /* end footer */
