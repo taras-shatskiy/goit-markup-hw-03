@@ -43,6 +43,11 @@ ul {
   padding: 0;
   margin: 0;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 .container {
   width: 100%;
@@ -50,10 +55,7 @@ ul {
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
-
-  outline: 2px dashed #f44336;
 }
-
 /* logo */
 .logo {
   color: var(--focus-color);
@@ -88,11 +90,9 @@ ul {
   display: flex;
   gap: 50px;
 }
-
 .site-nav-link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 32px 0;
 
   color: var(--title-text-color);
   font-weight: 500;
@@ -109,12 +109,12 @@ ul {
 }
 .contact {
   display: flex;
+  align-items: center;
   gap: 50px;
 }
 .contact-link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 0;
 
   color: var(--primary-text-color);
   font-weight: 500;
@@ -136,6 +136,7 @@ ul {
   text-align: center;
 }
 .hero-title {
+  max-width: 696px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -146,11 +147,11 @@ ul {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  width: 696px;
+  text-align: center;
 }
 .button-primary {
   padding: 10px 32px;
-  margin: inherit;
+  margin: 0 auto;
 
   color: var(--primary-white-color);
   font-family: inherit;
@@ -160,8 +161,8 @@ ul {
   letter-spacing: 0.06em;
   background-color: var(--focus-color);
   cursor: pointer;
-  border-radius: 4px;
   border: 0;
+  border-radius: 4px;
 }
 .button-primary:hover,
 .button-primary:focus {
@@ -172,10 +173,9 @@ ul {
 .container-preferecces {
   padding-top: 94px;
 }
-
 .preferecces-list {
   display: flex;
-  justify-content: space-between;
+  flex-basis: calc((100% - 90px) / 4);
   gap: 30px;
 }
 .preferences-title {
@@ -193,8 +193,7 @@ ul {
   letter-spacing: 0.03em;
 }
 .container-work {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding: 94px 0;
 }
 .work-header {
   margin-bottom: 50px;
@@ -208,16 +207,14 @@ ul {
 }
 .list-work {
   display: flex;
-  justify-content: space-between;
+  flex-basis: calc((100% - 60px) / 3);
   gap: 30px;
 }
-
 .section-team {
   background-color: var(--secondary-background-color);
 }
 .container-team {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding: 94px 0;
 }
 .team-header {
   margin-bottom: 50px;
@@ -231,7 +228,7 @@ ul {
 }
 .team-list {
   display: flex;
-  justify-content: space-between;
+  flex-basis: calc((100% - 90px) / 4);
   gap: 30px;
 }
 .team-item {
@@ -240,29 +237,38 @@ ul {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.image-team {
-  margin-bottom: 30px;
+.team-content {
+  padding: 30px 0;
+  text-align: center;
 }
 .team-title {
   margin-bottom: 10px;
+
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
-  text-align: center;
 }
 .team-text {
-  margin-bottom: 30px;
-
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
-  text-align: center;
 }
 /* end styles index.html */
 /* styles portfolio.html */
+.container-portfolio {
+  padding: 94px 0;
+}
 .button-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 50px;
+}
+.button-item {
+  padding: 6px 22px;
+
   color: var(--title-text-color);
   font-family: inherit;
   font-weight: 500;
@@ -271,17 +277,41 @@ ul {
   letter-spacing: 0.03em;
   background-color: var(--secondary-background-color);
   cursor: pointer;
+  border: 0;
+  border-radius: 4px;
 }
-.button-list:hover,
-.button-list:focus {
+.button-item:hover,
+.button-item:focus {
   background-color: var(--focus-color);
   color: var(--primary-white-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 .portfolio-item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.portfolio-item:nth-child(3n) {
+  margin-right: 0;
+}
+.portfolio-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+.portfolio-content {
+  padding: 20px 0;
+}
+.portfolio-title {
+  margin-bottom: 4px;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
