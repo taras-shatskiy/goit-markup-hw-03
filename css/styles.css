@@ -308,6 +308,7 @@ img {
 }
 .portfolio-content {
   padding: 20px 0;
+  border: 1px solid #eeeeee;
 }
 .portfolio-title {
   margin-bottom: 4px;
